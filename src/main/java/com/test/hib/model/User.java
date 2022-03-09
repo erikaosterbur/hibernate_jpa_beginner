@@ -1,4 +1,4 @@
-package net.codejava.hibernate.com.test.hib.model;
+package com.test.hib.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -11,12 +11,29 @@ import javax.persistence.Table;
 
 public class User {
     private Integer id;
-    private String fullname;
+    private String fullName;
     private String email;
     private String password;
     private int age;
     private double salary;
     private String city;
+
+    public User(String fullName, String email, String password, int age, double salary, String city) {
+        this.id = id;
+        this.fullName = fullName;
+        this.email = email;
+        this.password = password;
+        this.age = age;
+        this.salary = salary;
+        this.city = city;
+    }
+    public User() {
+
+    }
+
+    @Column(name = "USER_ID")
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
 
     public Integer getId() {
         return id;
@@ -26,12 +43,12 @@ public class User {
         this.id = id;
     }
 
-    public String getFullname() {
-        return fullname;
+    public String getFullName() {
+        return fullName;
     }
 
-    public void setFullname(String fullname) {
-        this.fullname = fullname;
+    public void setFullName(String fullName) {
+        this.fullName = fullName;
     }
 
     public String getEmail() {
